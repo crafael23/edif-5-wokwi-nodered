@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#223651" />
+    <meta name="description" content="Walk through the Version 2.1 SketchUp site model in first person." />
+    <link rel="icon" href="data:," />
+    <title>Version 2.1 Walkthrough</title>
+  </head>
+  <body>
+    <main class="field" id="field" aria-label="Version 2.1 walkthrough">
+      <div class="game-canvas" id="game-canvas"></div>
+      <div class="crosshair" aria-hidden="true"></div>
+
+      <header class="map-navigation">
+        <h1 class="map-title">Version 2.1</h1>
+        <nav aria-label="Map locations">
+          <button class="hud-button" type="button" id="interior" disabled>Interior</button>
+          <button class="hud-button" type="button" id="exterior" disabled>Exterior</button>
+        </nav>
+      </header>
+
+      <div class="compass" id="compass" aria-hidden="true">NW</div>
+      <div class="game-actions">
+        <button class="hud-button" type="button" id="restart" title="Restart" aria-label="Restart" disabled>
+          <span class="restart-icon" aria-hidden="true">↻</span>
+          <span class="action-label">Restart</span>
+        </button>
+        <button class="hud-button" type="button" id="fullscreen" title="Fullscreen" aria-label="Fullscreen" hidden>
+          <span class="fullscreen-icon" aria-hidden="true"></span>
+          <span class="action-label" id="fullscreen-label">Fullscreen</span>
+        </button>
+      </div>
+
+      <div class="prompts">
+        <div class="field-view" id="look-hint" hidden>Click the field to look around</div>
+        <div class="field-view" id="interaction-hint" hidden></div>
+        <div class="field-status" role="status" id="field-status">Loading map…</div>
+      </div>
+
+      <div class="keyboard-controls" aria-label="Keyboard and mouse controls">
+        <span><kbd>WASD</kbd> Move</span>
+        <span><kbd>Q / E</kbd> Turn</span>
+        <span><kbd>F</kbd> Usar</span>
+      </div>
+
+      <div class="touch-controls" id="touch-controls" aria-label="Touch movement controls">
+        <button type="button" data-move="KeyW" aria-label="Move up">↑</button>
+        <button type="button" data-move="KeyA" aria-label="Move left">←</button>
+        <button type="button" data-move="KeyS" aria-label="Move down">↓</button>
+        <button type="button" data-move="KeyD" aria-label="Move right">→</button>
+      </div>
+
+      <div class="game-error" id="game-error" hidden>
+        <h2>3D view unavailable</h2>
+        <p>Reload to try the map again. The walkthrough requires WebGL 2.</p>
+      </div>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
